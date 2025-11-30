@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects — Muiz Abiola Aminu</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Page-Specific Grid for Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: var(--bg-body);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+            border-color: var(--accent);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-body {
+            padding: 25px;
+        }
+
+        .project-body h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .project-body p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: var(--bg-alt);
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Muiz.</a>
+
+            <nav class="nav-links">
+                <a href="index.html#home" class="nav-item">Home</a>
+                <a href="index.html#about" class="nav-item">About</a>
+                <a href="index.html#skills" class="nav-item">Skills</a>
+                <a href="projects.html" class="nav-item active">Work</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+            </div>
+
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header center" data-aos="fade-up">
+                <h2>All Projects</h2>
+                <p>A complete archive of my embedded systems, IoT, and robotics work.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card" id="plugguard" data-aos="fade-up">
+                    <img src="assets/images/plugguard.jpg" alt="PlugGuard" class="project-img">
+                    <div class="project-body">
+                        <h3>PlugGuard — IoT Safety</h3>
+                        <p>Smart plug with gas/smoke detection and auto-cutoff. Features a Flutter mobile app for
+                            real-time alerts.</p>
+                        <div class="tags">
+                            <span class="tag">ESP32</span><span class="tag">Firebase</span><span
+                                class="tag">Flutter</span>
+                        </div>
+                        <a href="#" class="link-arrow">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="project-card" id="pipeline" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/images/pipeline_robot.jpg" alt="Pipeline Robot" class="project-img">
+                    <div class="project-body">
+                        <h3>Pipeline Monitoring Robot</h3>
+                        <p>Semi-autonomous robot for inspecting industrial pipelines using camera streaming and obstacle
+                            detection.</p>
+                        <div class="tags">
+                            <span class="tag">Robotics</span><span class="tag">C++</span><span
+                                class="tag">Arduino</span>
+                        </div>
+                        <a href="#" class="link-arrow">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="project-card" id="vehicle" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/images/autonomous_vehicle.jpg" alt="Autonomous Vehicle" class="project-img">
+                    <div class="project-body">
+                        <h3>Autonomous Vehicle</h3>
+                        <p>Self-navigating vehicle prototype utilizing sensor fusion and path planning algorithms.</p>
+                        <div class="tags">
+                            <span class="tag">Control Systems</span><span class="tag">Sensors</span>
+                        </div>
+                        <a href="#" class="link-arrow">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="project-card" id="pills" data-aos="fade-up">
+                    <img src="assets/images/pills_dispenser.jpg" alt="Pill Dispenser" class="project-img">
+                    <div class="project-body">
+                        <h3>Smart Pill Dispenser</h3>
+                        <p>IoT-enabled medication dispenser that tracks adherence and alerts patients via mobile
+                            notification.</p>
+                        <div class="tags">
+                            <span class="tag">IoT</span><span class="tag">Servo Motors</span>
+                        </div>
+                        <a href="#" class="link-arrow">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="project-card" id="drier" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/images/food_drier.jpg" alt="Food Drier" class="project-img">
+                    <div class="project-body">
+                        <h3>Automated Food Drier</h3>
+                        <p>PID-controlled temperature and humidity system for efficient food preservation.</p>
+                        <div class="tags">
+                            <span class="tag">PID Control</span><span class="tag">Embedded C</span>
+                        </div>
+                        <a href="#" class="link-arrow">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="project-card" id="antitheft" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/images/anti_theft.jpg" alt="Anti Theft" class="project-img">
+                    <div class="project-body">
+                        <h3>Motorcycle Anti-Theft</h3>
+                        <p>Biometric and GPS-enabled security system to prevent unauthorized access and track location.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">GPS/GSM</span><span class="tag">Biometrics</span>
+                        </div>
+                        <a href="#" class="link-arrow">View Details →</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
