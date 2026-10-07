@@ -1,0 +1,9 @@
+# Local Python env (created by dev tooling — not part of the site)
+.venv/
+__pycache__/
+*.pyc
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/

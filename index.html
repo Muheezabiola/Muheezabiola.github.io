@@ -1,325 +1,619 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muiz Abiola Aminu — Portfolio</title>
+    <title>Muiz Abiola Aminu — Mechatronics Engineer &amp; Researcher</title>
+    <meta name="description"
+        content="Muiz Abiola Aminu — Mechatronics engineer and researcher working on control systems, embedded architectures and autonomous mobile robotics. B.Eng. Mechatronics Engineering, Federal University of Technology, Minna.">
+    <meta property="og:title" content="Muiz Abiola Aminu — Mechatronics Engineer & Researcher">
+    <meta property="og:description"
+        content="Control systems, embedded architectures and autonomous mobile robotics — research, publications and engineering work.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://muheezabiola.github.io/">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232b6cff'/%3E%3Cstop offset='1' stop-color='%230ca6a2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">Muiz.</a>
+    <!-- ================= NAV ================= -->
+    <header class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="brand">
+                <span class="mark"><i class="fa-solid fa-microchip"></i></span>
+                Muiz<span style="color:var(--accent)">.</span>
+            </a>
 
-            <nav class="nav-links">
-                <a href="#home" class="nav-item active">Home</a>
-                <a href="#about" class="nav-item">About</a>
-                <a href="#skills" class="nav-item">Skills</a>
-                <a href="#featured" class="nav-item">Work</a>
-                <a href="#contact" class="nav-item">Contact</a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#credentials" class="nav-link">Credentials</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
 
             <div class="nav-actions">
-                <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
-                <a href="assets/muiz_abiola_aminu_cv.pdf" class="btn-small" download>Download CV</a>
-            </div>
-
-            <div class="menu-icon" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="assets/Muiz_Academic_CV.pdf" target="_blank" rel="noopener"
+                    class="btn btn-ghost btn-sm">
+                    <i class="fa-solid fa-file-pdf"></i> CV
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
             </div>
         </div>
     </header>
 
-    <section id="home" class="hero-section">
-        <div class="hero-content" data-aos="fade-up">
-            <p class="eyebrow">Mechatronics & Embedded Systems Engineer</p>
-            <h1>Building the intelligence<br>behind smart hardware.</h1>
-            <p class="subtitle">I bridge the gap between hardware and software to create user-centered embedded/IoT
-                solutions.</p>
+    <!-- ================= HERO ================= -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
 
-            <div class="cta-group">
-                <a href="#featured" class="btn-primary">View Projects</a>
-                <a href="#contact" class="btn-outline">Contact Me</a>
+        <div class="container" style="position:relative;z-index:1;">
+            <p class="hero-eyebrow reveal">B.Eng. Mechatronics Engineering · Federal University of Technology,
+                Minna</p>
+
+            <h1 class="reveal" data-delay="1">Mechatronics &amp; Embedded<br>Systems Engineer</h1>
+
+            <p class="hero-sub reveal" data-delay="2">Specializing in bare-metal firmware, IoT telemetry, and
+                autonomous mechatronic systems.</p>
+
+            <div class="cta-row reveal" data-delay="2">
+                <a href="#work" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Engineering
+                    projects</a>
+                <a href="assets/Muiz_Academic_CV.pdf" target="_blank" rel="noopener"
+                    class="btn btn-ghost"><i class="fa-solid fa-file-pdf"></i> View Academic CV</a>
             </div>
 
-            <div class="hero-socials">
-                <a href="https://github.com/Muheezabiola" target="_blank" title="GitHub"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/muiz-aminu" target="_blank" title="LinkedIn"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="mailto:muheezabiola99@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://wa.me/2348148043780" target="_blank" title="WhatsApp"><i
-                        class="fab fa-whatsapp"></i></a>
-                <a href="#" title="X / Twitter"><i class="fab fa-twitter"></i></a>
+            <div class="hero-meta reveal" data-delay="3">
+                <span class="chip neutral">Lagos, Nigeria</span>
+                <span class="chip neutral">Firmware Architecture</span>
+                <span class="chip neutral">Control · Embedded · Robotics</span>
+            </div>
+
+            <div class="socials reveal" data-delay="3">
+                <a href="https://github.com/Muheezabiola" target="_blank" rel="noopener" aria-label="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/muiz-aminu" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:aminumuiz@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
 
-        <div class="scroll-indicator">
-            <span>Scroll down</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
+        <div class="scroll-hint"><span>Scroll</span><i class="fa-solid fa-chevron-down"></i></div>
     </section>
 
-    <section id="about" class="section-padding">
-        <div class="container" data-aos="fade-up">
-            <div class="section-header center">
-                <h2>About Me</h2>
-                <p>I specialize in firmware, robotics, and cross-platform IoT integration.</p>
-            </div>
-            <div class="about-wrapper">
-                <div class="about-image">
-                    <img src="assets/images/profile.jpg" alt="Muiz">
-                </div>
-                <div class="about-text">
-                    <h3>Mechatronics & Embedded Systems Engineer.</h3>
-
-                    <p>I have hands-on experience developing C/C++ firmware for AVR, ESP, ARM Cortex, and Raspberry Pi
-                        microcontrollers. I am also proficient in MATLAB/Simulink for system modeling and control
-                        design.</p>
-
-                    <p>My work focuses on building IoT systems with real-time capabilities, sensor integration, and
-                        cloud connectivity using Firebase. I also develop cross-platform mobile interfaces using Flutter
-                        to create practical, user-centered solutions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section-padding bg-alt">
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section">
         <div class="container">
-            <div class="section-header center" data-aos="fade-up">
-                <h2>Technical Stack</h2>
-                <p>The technologies I use to build embedded systems.</p>
+            <div class="section-head left reveal">
+                <span class="overline">01 · About</span>
+                <h2>Engineering grounded in <span class="accent-text">research.</span></h2>
             </div>
 
-            <div class="skills-grid">
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-box"><i class="fas fa-microchip"></i></div>
-                    <h3>Microcontrollers</h3>
-                    <p class="skill-desc">ESP, AVR, STM32</p>
+            <div class="about-grid">
+                <div class="portrait reveal">
+                    <div class="portrait-frame">
+                        <img src="assets/images/profile.jpg" alt="Muiz Abiola Aminu portrait">
+                    </div>
+                    <div class="loc-card">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div><b>Lagos, Nigeria</b><span>Mechatronics Engineer</span></div>
+                    </div>
                 </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
-                    <div class="icon-box"><i class="fas fa-code"></i></div>
-                    <h3>Languages</h3>
-                    <p class="skill-desc">C, C++, Python</p>
+
+                <div class="about-copy reveal" data-delay="1">
+                    <h3>Firmware architecture and physical fabrication for constrained edge devices.</h3>
+                    <p>I am a Mechatronics Engineer focused on the physical fabrication and firmware architecture of
+                        constrained edge devices and autonomous systems. My engineering background spans multi-layer
+                        PCB design, bare-metal C/C++ firmware development, and the integration of environmental
+                        telemetry into cloud platforms via MQTT and RESTful APIs. I actively develop hardware solutions
+                        for smart energy microgrids, industrial automation, and robotic hazard detection, emphasizing
+                        reliable control logic and low-latency sensor fusion.</p>
+                    <p><strong>B.Eng. Mechatronics Engineering</strong>, Federal University of Technology, Minna —
+                        Second Class Honours (Upper Division), CGPA <strong>4.37 / 5.00 (87%)</strong>. Capstone thesis
+                        developed a semi-autonomous navigation system for a pipeline monitoring robot.</p>
+
+                    <div class="interest-block">
+                        <h4>Research interests</h4>
+                        <div class="chip-row">
+                            <span class="chip">Control systems</span>
+                            <span class="chip">Embedded architectures</span>
+                            <span class="chip">Autonomous mobile robotics</span>
+                            <span class="chip">Edge intelligence (TinyML)</span>
+                            <span class="chip">Mechatronic integration for industrial and clean energy
+                                systems</span>
+                        </div>
+                    </div>
+
+                    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Get in
+                            touch</a>
+                        <a href="assets/Muiz_Academic_CV.pdf" target="_blank" rel="noopener"
+                            class="btn btn-ghost"><i class="fa-solid fa-file-pdf"></i> View Academic CV</a>
+                    </div>
                 </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-box"><i class="fas fa-layer-group"></i></div>
-                    <h3>RTOS</h3>
-                    <p class="skill-desc">FreeRTOS</p>
-                </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="250">
-                    <div class="icon-box"><i class="fas fa-network-wired"></i></div>
-                    <h3>Protocols</h3>
-                    <p class="skill-desc">UART, I2C, SPI, CAN</p>
-                </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon-box"><i class="fas fa-pencil-ruler"></i></div>
-                    <h3>PCB Design</h3>
-                    <p class="skill-desc">EasyEDA, Schematics</p>
-                </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="350">
-                    <div class="icon-box"><i class="fas fa-chart-line"></i></div>
-                    <h3>Simulation</h3>
-                    <p class="skill-desc">MATLAB / Simulink</p>
-                </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Mobile App</h3>
-                    <p class="skill-desc">Flutter / Dart</p>
-                </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="450">
-                    <div class="icon-box"><i class="fas fa-cloud"></i></div>
-                    <h3>IoT Cloud</h3>
-                    <p class="skill-desc">Firebase, MQTT</p>
-                </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="icon-box"><i class="fas fa-robot"></i></div>
-                    <h3>Robotics</h3>
-                    <p class="skill-desc">Control Systems</p>
-                </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="550">
-                    <div class="icon-box"><i class="fab fa-raspberry-pi"></i></div>
-                    <h3>SBC</h3>
-                    <p class="skill-desc">Raspberry Pi</p>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat reveal"><b>4.37<span class="stat-unit"> / 5.00 (87%)</span></b><span>CGPA — B.Eng.
+                        Mechatronics Engineering</span></div>
+                <div class="stat reveal" data-delay="1"><b>2</b><span>Manuscripts in preparation</span></div>
+                <div class="stat reveal" data-delay="2"><b>7+</b><span>Years building embedded systems</span></div>
+                <div class="stat reveal" data-delay="3"><b>250+</b><span>Students trained in embedded &amp; IoT</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="featured" class="section-padding">
+    <!-- ================= EXPERIENCE ================= -->
+    <section id="experience" class="section" style="background:var(--bg-2);">
         <div class="container">
-            <div class="section-header center" data-aos="fade-up">
-                <h2>Featured Innovation</h2>
-                <p>Selected works that demonstrate end-to-end engineering.</p>
+            <div class="section-head center reveal">
+                <span class="overline">02 · Experience</span>
+                <h2>Research &amp; engineering experience</h2>
+                <p class="lead">Roles across embedded engineering, applied research and clean-energy systems.</p>
             </div>
 
-            <div class="showcase-item" data-aos="fade-up">
-                <div class="showcase-content">
-                    <span class="product-tag">IoT Safety</span>
-                    <h3>PlugGuard</h3>
-                    <p>An intelligent safety plug that detects gas leaks and smoke, automatically cutting power to
-                        prevent fires. Integrated with a Flutter mobile app for real-time alerts.</p>
-                    <ul class="tech-list">
-                        <li>ESP32</li>
-                        <li>Firebase</li>
-                        <li>Flutter</li>
-                        <li>Gas Sensors</li>
-                    </ul>
-                    <a href="projects.html#plugguard" class="link-arrow">View Case Study →</a>
+            <div class="timeline">
+                <div class="tl-item reveal">
+                    <div class="tl-top">
+                        <h3>Embedded Systems Engineer</h3>
+                        <span class="tl-date">Jun 2026 — Present</span>
+                    </div>
+                    <div class="tl-who">EN1 Technologies · Lagos</div>
+                    <p>Architecting bare-metal STM32F407 firmware for e-tricycle ECUs, and developing ESP32
+                        thermoforming control systems that integrate solid-state relay loops with MQTT telemetry.</p>
                 </div>
-                <div class="showcase-image">
-                    <img src="assets/images/plugguard.jpg" alt="PlugGuard">
-                </div>
-            </div>
 
-            <div class="showcase-item reverse" data-aos="fade-up">
-                <div class="showcase-content">
-                    <span class="product-tag">Robotics</span>
-                    <h3>Pipeline Robot</h3>
-                    <p>A semi-autonomous inspection robot capable of traversing pipelines to detect cracks and leaks.
-                        Features live video streaming and obstacle avoidance algorithms.</p>
-                    <ul class="tech-list">
-                        <li>Arduino</li>
-                        <li>C++ Firmware</li>
-                        <li>Wireless Comms</li>
-                        <li>Camera Module</li>
-                    </ul>
-                    <a href="projects.html#pipeline" class="link-arrow">View Case Study →</a>
+                <div class="tl-item reveal">
+                    <div class="tl-top">
+                        <h3>IoT Research Engineer</h3>
+                        <span class="tl-date">Jan 2026 — Jun 2026</span>
+                    </div>
+                    <div class="tl-who">Aflon Center for Artificial Intelligence and Robotics · Abuja</div>
+                    <p>Prototyped IoT hardware and designed system architectures bridging microcontroller telemetry
+                        with cloud platforms.</p>
                 </div>
-                <div class="showcase-image">
-                    <img src="assets/images/pipeline_robot.jpg" alt="Pipeline Robot">
-                </div>
-            </div>
 
-            <div class="showcase-item" data-aos="fade-up">
-                <div class="showcase-content">
-                    <span class="product-tag">Autonomous Systems</span>
-                    <h3>Self-Navigating Vehicle</h3>
-                    <p>A prototype vehicle that uses sensor fusion to map its environment and avoid obstacles in
-                        real-time.</p>
-                    <ul class="tech-list">
-                        <li>Control Systems</li>
-                        <li>Sensors</li>
-                        <li>C++</li>
-                    </ul>
-                    <a href="projects.html#vehicle" class="link-arrow">View Case Study →</a>
+                <div class="tl-item reveal">
+                    <div class="tl-top">
+                        <h3>Research Assistant</h3>
+                        <span class="tl-date">Jul 2021 — Dec 2025</span>
+                    </div>
+                    <div class="tl-who">Advanced Engineering Innovation Research Group · Minna</div>
+                    <p>Evaluated experimental setups for autonomous obstacle detection, sensor fusion and wireless
+                        telemetry links.</p>
                 </div>
-                <div class="showcase-image">
-                    <img src="assets/images/autonomous_vehicle.jpg" alt="Autonomous Vehicle">
-                </div>
-            </div>
 
-            <div class="showcase-item reverse" data-aos="fade-up">
-                <div class="showcase-content">
-                    <span class="product-tag">HealthTech</span>
-                    <h3>Smart Pill Dispenser</h3>
-                    <p>An automated medication dispenser designed to improve patient adherence. Dispenses pills at
-                        scheduled times with alerts.</p>
-                    <ul class="tech-list">
-                        <li>IoT</li>
-                        <li>Servo Motors</li>
-                        <li>Mobile Alerting</li>
-                    </ul>
-                    <a href="projects.html#pills" class="link-arrow">View Case Study →</a>
+                <div class="tl-item reveal">
+                    <div class="tl-top">
+                        <h3>Research Associate</h3>
+                        <span class="tl-date">May 2022 — Dec 2025</span>
+                    </div>
+                    <div class="tl-who">Ideal Intelligent Innovation Research Group · Minna</div>
+                    <p>Prototyped hardware and optimised motor control logic for automation projects while mentoring
+                        student researchers.</p>
                 </div>
-                <div class="showcase-image">
-                    <img src="assets/images/pills_dispenser.jpg" alt="Pill Dispenser">
+
+                <div class="tl-item reveal">
+                    <div class="tl-top">
+                        <h3>Engineering Intern</h3>
+                        <span class="tl-date">Jun 2024 — Nov 2024</span>
+                    </div>
+                    <div class="tl-who">Artificial Intelligence for Clean Energy Ltd. · Minna</div>
+                    <p>Engineered smart energy telemetry hardware for clean-energy monitoring and microgrid
+                        applications.</p>
+                </div>
+
+                <div class="tl-item reveal">
+                    <div class="tl-top">
+                        <h3>Hardware Engineer (Part-Time)</h3>
+                        <span class="tl-date">Aug 2019 — Present</span>
+                    </div>
+                    <div class="tl-who">E-lord Technology · Ogbomoso</div>
+                    <p>Schematic capture, footprint assignment and multi-layer PCB layout in EasyEDA for prototype
+                        hardware.</p>
                 </div>
             </div>
 
-            <div class="showcase-item" data-aos="fade-up">
-                <div class="showcase-content">
-                    <span class="product-tag">Automation</span>
-                    <h3>Automated Food Drier</h3>
-                    <p>Precise temperature and humidity control system for food preservation using PID control logic.
-                    </p>
-                    <ul class="tech-list">
-                        <li>PID Control</li>
-                        <li>Embedded C</li>
-                        <li>Sensors</li>
-                    </ul>
-                    <a href="projects.html#drier" class="link-arrow">View Case Study →</a>
-                </div>
-                <div class="showcase-image">
-                    <img src="assets/images/food_drier.jpg" alt="Food Drier">
-                </div>
+            <div class="section-head center reveal" style="margin:72px auto 0; max-width:640px;">
+                <span class="overline">Teaching &amp; Leadership</span>
+                <h2 style="font-size:clamp(1.4rem,3vw,2rem);">Mentoring the next cohort</h2>
             </div>
 
-            <div class="showcase-item reverse" data-aos="fade-up">
-                <div class="showcase-content">
-                    <span class="product-tag">Security</span>
-                    <h3>Motorcycle Anti-Theft</h3>
-                    <p>Biometric and GPS security system allowing remote engine disable via SMS.</p>
-                    <ul class="tech-list">
-                        <li>GPS/GSM</li>
-                        <li>Biometrics</li>
-                        <li>Security</li>
-                    </ul>
-                    <a href="projects.html#antitheft" class="link-arrow">View Case Study →</a>
+            <div class="lead-grid">
+                <div class="lead-card reveal">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <div>
+                        <h4>Lead STEM Facilitator — Build-a-thon Holiday Camp &amp; Summer with DOME</h4>
+                        <span class="org">Minna · Robotics &amp; IoT camps</span>
+                        <span class="when">2024 — 2025</span>
+                    </div>
                 </div>
-                <div class="showcase-image">
-                    <img src="assets/images/anti_theft.jpg" alt="Anti Theft">
+                <div class="lead-card reveal" data-delay="1">
+                    <i class="fa-solid fa-school"></i>
+                    <div>
+                        <h4>STEM Club Instructor</h4>
+                        <span class="org">Himma College · Minna</span>
+                        <span class="when">Nov 2024 — May 2025</span>
+                    </div>
                 </div>
-            </div>
-
-            <div class="center-btn" style="margin-top: 60px;">
-                <a href="projects.html" class="btn-primary">View Full Archive</a>
+                <div class="lead-card reveal" data-delay="2">
+                    <i class="fa-solid fa-microchip"></i>
+                    <div>
+                        <h4>Embedded Systems &amp; IoT Facilitator</h4>
+                        <span class="org">Ideal Intelligent Innovation Research Group · Minna</span>
+                        <span class="when">May 2022 — Dec 2025</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section-padding bg-alt">
-        <div class="container contact-container" data-aos="fade-up">
-            <div class="section-header center">
-                <h2>Get in Touch</h2>
-                <p>Have a project in mind? Let's build something intelligent.</p>
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-head center reveal">
+                <span class="overline">03 · Skills</span>
+                <h2>Technical competencies</h2>
+                <p class="lead">From transistor-level firmware to control-loop design and cloud telemetry.</p>
             </div>
 
-            <div class="contact-methods">
-                <a href="mailto:muheezabiola99@gmail.com" class="method-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email Me</h3>
-                    <p>muheezabiola99@gmail.com</p>
-                </a>
-                <a href="https://wa.me/2348148043780" target="_blank" class="method-card">
-                    <i class="fab fa-whatsapp"></i>
-                    <h3>WhatsApp</h3>
-                    <p>Chat on WhatsApp</p>
-                </a>
-            </div>
+            <div class="skill-cols">
+                <div class="skill-card reveal">
+                    <div class="sc-head">
+                        <span class="sc-ic"><i class="fa-solid fa-microchip"></i></span>
+                        <div>
+                            <h3>Microcontrollers &amp; SBCs</h3><span class="sc-sub">the compute layer</span>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">ARM Cortex-M (STM32F407)</span><span class="chip">ESP32</span><span
+                            class="chip">ESP8266</span><span class="chip">AVR</span><span class="chip">Raspberry
+                            Pi</span>
+                    </div>
+                </div>
 
-            <form action="#" class="contact-form">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" placeholder="Your name" required>
+                <div class="skill-card reveal" data-delay="1">
+                    <div class="sc-head">
+                        <span class="sc-ic"><i class="fa-solid fa-code"></i></span>
+                        <div>
+                            <h3>Languages</h3><span class="sc-sub">firmware to analysis</span>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">C</span><span class="chip">C++</span><span class="chip">Bare-metal
+                            embedded C</span><span class="chip">Python</span><span class="chip">Dart (Flutter)</span>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" placeholder="Your email" required>
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea rows="5" placeholder="How can I help you?" required></textarea>
-                </div>
-                <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
-            </form>
 
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> Muiz Abiola Aminu.</p>
+                <div class="skill-card reveal" data-delay="2">
+                    <div class="sc-head">
+                        <span class="sc-ic"><i class="fa-solid fa-layer-group"></i></span>
+                        <div>
+                            <h3>Firmware Frameworks</h3><span class="sc-sub">real-time execution</span>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">CMSIS</span><span class="chip">FreeRTOS</span><span
+                            class="chip">Register-level HAL</span><span class="chip">PlatformIO</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="sc-head">
+                        <span class="sc-ic"><i class="fa-solid fa-gears"></i></span>
+                        <div>
+                            <h3>Hardware Design</h3><span class="sc-sub">the physical layer</span>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">Multi-layer PCB layout</span><span class="chip">KiCad</span><span
+                            class="chip">EasyEDA</span><span class="chip">Stepper &amp; servo drivers</span><span
+                            class="chip">SSRs</span><span class="chip">Power electronics</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-delay="1">
+                    <div class="sc-head">
+                        <span class="sc-ic"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                        <div>
+                            <h3>IoT &amp; Protocols</h3><span class="sc-sub">device to cloud</span>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">MQTT (Mosquitto)</span><span class="chip">REST APIs</span><span
+                            class="chip">Firebase</span><span class="chip">Node-RED</span><span class="chip">UART ·
+                            SPI · I2C</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-delay="2">
+                    <div class="sc-head">
+                        <span class="sc-ic"><i class="fa-solid fa-chart-line"></i></span>
+                        <div>
+                            <h3>Simulation &amp; Control</h3><span class="sc-sub">modelling the behaviour</span>
+                        </div>
+                    </div>
+                    <div class="chip-row">
+                        <span class="chip">MATLAB/Simulink</span><span class="chip">Control system design</span><span
+                            class="chip">Sensor fusion</span><span class="chip">Hardware-in-the-loop testing</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- ================= WORK (featured, rendered by JS) ================= -->
+    <section id="work" class="section" style="background:var(--bg-2);">
+        <div class="container">
+            <div class="section-head center reveal">
+                <span class="overline">04 · Selected work</span>
+                <h2>Engineering projects</h2>
+                <p class="lead">Previous projects spanning embedded firmware, control systems, IoT and robotics. Click
+                    on any to open into a full case study.</p>
+            </div>
+
+            <div id="featuredList" class="container" style="width:100%; padding:0;"></div>
+
+            <div class="reveal" style="text-align:center; margin-top:72px;">
+                <a href="projects.html" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> View full
+                    project archive</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PUBLICATIONS ================= -->
+    <section id="publications" class="section">
+        <div class="container">
+            <div class="section-head center reveal">
+                <span class="overline">05 · Publications</span>
+                <h2>Preprints &amp; publications</h2>
+                <p class="lead">Manuscripts in preparation from my work in autonomous navigation and edge intelligence.
+                </p>
+            </div>
+
+            <ol class="pub-list">
+                <li class="pub-item reveal">
+                    <div class="pub-head">
+                        <span class="pub-num">01</span>
+                        <span class="pub-status">Manuscript in preparation</span>
+                    </div>
+                    <h3 class="pub-title">Development of a Semi-Autonomous Navigation System for a Pipeline Monitoring
+                        Robot</h3>
+                    <p class="pub-authors"><b>Aminu, M. A.</b> <span class="pub-year">(2026)</span></p>
+                    <p class="pub-note">Extends the capstone research behind the pipeline inspection rover — ultrasonic
+                        hazard detection, autonomous halting behaviour and bidirectional teleoperation.</p>
+                    <div class="pub-actions">
+                        <a class="btn btn-ghost btn-sm"
+                            href="assets/Muiz%20Aminu%20Pipeline%20Robot%20preprint.pdf" target="_blank"
+                            rel="noopener">
+                            <i class="fa-solid fa-file-pdf"></i> View Preprint (PDF)
+                        </a>
+                    </div>
+                </li>
+
+                <li class="pub-item reveal" data-delay="1">
+                    <div class="pub-head">
+                        <span class="pub-num">02</span>
+                        <span class="pub-status">Manuscript in preparation</span>
+                    </div>
+                    <h3 class="pub-title">Benchmarking TinyML Inference Latency and Energy Efficiency on Constrained
+                        ESP32 Architectures</h3>
+                    <p class="pub-authors"><b>Aminu, M. A.</b> <span class="pub-year">(2026)</span></p>
+                    <p class="pub-note">A study of TensorFlow Lite for Microcontrollers inference latency, memory
+                        footprint and int8 quantization performance across ESP32-C3 class devices.</p>
+                    <div class="pub-actions">
+                        <a class="btn btn-ghost btn-sm" href="assets/Muiz%20Aminu%20TinyML%20preprint.pdf"
+                            target="_blank" rel="noopener">
+                            <i class="fa-solid fa-file-pdf"></i> View Preprint (PDF)
+                        </a>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ================= CREDENTIALS (education + certs) ================= -->
+    <section id="credentials" class="section" style="background:var(--bg-2);">
+        <div class="container">
+            <div class="section-head center reveal">
+                <span class="overline">06 · Credentials</span>
+                <h2>Education, certifications &amp; awards</h2>
+            </div>
+
+            <div class="cert-card reveal" style="margin-bottom:22px; align-items:flex-start;">
+                <span class="cc-ic" style="width:54px;height:54px;font-size:1.3rem;"><i
+                        class="fa-solid fa-graduation-cap"></i></span>
+                <div>
+                    <h4>B.Eng. Mechatronics Engineering — Federal University of Technology, Minna</h4>
+                    <span class="cc-org">Second Class Honours (Upper Division) · CGPA <b>4.37 / 5.00</b> (87%) ·
+                        Nigeria</span>
+                    <span class="cc-date">Graduated Dec 2025</span>
+                    <p class="cc-note"><b>Capstone thesis:</b> Development of a Semi-Autonomous Navigation System for a
+                        Pipeline Monitoring Robot</p>
+                </div>
+            </div>
+
+            <div class="certs-grid">
+                <div class="cert-card reveal">
+                    <span class="cc-ic"><i class="fa-solid fa-award"></i></span>
+                    <div>
+                        <h4>Simulink Fundamentals</h4><span class="cc-org">MathWorks</span><span class="cc-date">Jul
+                            2023</span>
+                    </div>
+                </div>
+                <div class="cert-card reveal" data-delay="1">
+                    <span class="cc-ic"><i class="fa-solid fa-award"></i></span>
+                    <div>
+                        <h4>Control Design Onramp with Simulink</h4><span class="cc-org">MathWorks</span><span
+                            class="cc-date">Feb 2025</span>
+                    </div>
+                </div>
+                <div class="cert-card reveal" data-delay="2">
+                    <span class="cc-ic"><i class="fa-solid fa-award"></i></span>
+                    <div>
+                        <h4>Career Essentials in Sustainable Tech</h4><span class="cc-org">Microsoft &amp;
+                            LinkedIn</span><span class="cc-date">Oct 2024</span>
+                    </div>
+                </div>
+                <div class="cert-card reveal">
+                    <span class="cc-ic"><i class="fa-solid fa-people-group"></i></span>
+                    <div>
+                        <h4>Professional Member — Society of Petroleum Engineers</h4><span class="cc-org">SPE</span>
+                    </div>
+                </div>
+                <div class="cert-card reveal" data-delay="1">
+                    <span class="cc-ic"><i class="fa-solid fa-people-group"></i></span>
+                    <div>
+                        <h4>Graduate Member — Nigerian Society of Engineers</h4><span class="cc-org">GMNSE</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="certs-sub reveal">Awards &amp; scholarships</h3>
+
+            <div class="certs-grid">
+                <div class="cert-card award reveal">
+                    <span class="cc-ic"><i class="fa-solid fa-trophy"></i></span>
+                    <div>
+                        <h4>NNPC/Seplat JV National Undergraduate Scholarship</h4><span class="cc-org">National
+                            award</span><span class="cc-date">2024</span>
+                    </div>
+                </div>
+                <div class="cert-card award reveal" data-delay="1">
+                    <span class="cc-ic"><i class="fa-solid fa-trophy"></i></span>
+                    <div>
+                        <h4>Abdulkabir Aliu Foundation Scholarship</h4><span class="cc-org">Merit
+                            scholarship</span><span class="cc-date">2023</span>
+                    </div>
+                </div>
+                <div class="cert-card award reveal" data-delay="2">
+                    <span class="cc-ic"><i class="fa-solid fa-trophy"></i></span>
+                    <div>
+                        <h4>Vice Chancellor's Certificate of Excellence</h4><span class="cc-org">FUTMinna</span><span
+                            class="cc-date">2022</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-copy reveal">
+                    <span class="overline">07 · Contact</span>
+                    <h2 style="font-size:clamp(1.7rem,3.6vw,2.5rem); margin-top:8px;">Technical enquiries, research<br>and
+                        <span class="accent-text">collaboration.</span></h2>
+                    <p>I'm glad to hear from researchers and engineers working on control systems, embedded
+                        architectures, autonomous robotics or edge intelligence — and from anyone who wants the
+                        engineering detail behind a project here.</p>
+
+                    <div class="contact-list">
+                        <a class="contact-item" href="mailto:aminumuiz@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div><b>Email</b><span>aminumuiz@gmail.com</span></div>
+                        </a>
+                        <a class="contact-item" href="https://linkedin.com/in/muiz-aminu" target="_blank"
+                            rel="noopener">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <div><b>LinkedIn</b><span>linkedin.com/in/muiz-aminu</span></div>
+                        </a>
+                        <a class="contact-item" href="https://github.com/Muheezabiola" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i>
+                            <div><b>GitHub</b><span>github.com/Muheezabiola</span></div>
+                        </a>
+                        <a class="contact-item" href="assets/Muiz_Academic_CV.pdf" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <div><b>Curriculum vitae</b><span>View the academic CV (PDF)</span></div>
+                        </a>
+                        <a class="contact-item" href="https://wa.me/2348148043780" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div><b>WhatsApp</b><span>+234 814 804 3780</span></div>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form reveal" data-delay="1" id="contactForm">
+                    <h3>Send a message</h3>
+                    <p class="cf-sub">This opens your email app with everything pre-filled — no data leaves your
+                        browser.</p>
+                    <div class="form-row">
+                        <div class="field"><label for="cfName">Your name</label><input id="cfName" type="text"
+                                placeholder="Jane Doe" required></div>
+                        <div class="field"><label for="cfEmail">Your email</label><input id="cfEmail" type="email"
+                                placeholder="jane@company.com" required></div>
+                    </div>
+                    <div class="field"><label for="cfSubject">Subject</label><input id="cfSubject" type="text"
+                            placeholder="Research collaboration / technical enquiry"></div>
+                    <div class="field"><label for="cfMsg">Message</label><textarea id="cfMsg"
+                            placeholder="Tell me about the opportunity, project or collaboration..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;"><i
+                            class="fa-solid fa-paper-plane"></i> Send message</button>
+                    <div class="form-note" id="formNote"><i class="fa-solid fa-circle-check"></i> Opening your email app
+                        — hit send there to finish.</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-top">
+                    <div>
+                        <div class="footer-brand">Muiz Abiola Aminu</div>
+                        <p>Mechatronics Engineer &amp; Researcher · Lagos, Nigeria</p>
+                    </div>
+                    <div class="socials">
+                        <a href="https://github.com/Muheezabiola" target="_blank" rel="noopener" aria-label="GitHub"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com/in/muiz-aminu" target="_blank" rel="noopener"
+                            aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:aminumuiz@gmail.com" aria-label="Email"><i
+                                class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <p style="border-top:1px solid var(--line); padding-top:22px;">© <span id="year"></span> Muiz Abiola
+                    Aminu. Built with plain HTML &amp; CSS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal used on both pages -->
+    <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-label="Project case study">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-panel">
+            <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-hero" id="modalHero"></div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="data/projects.js"></script>
     <script src="scripts.js"></script>
+    <script src="tracker-config.js"></script>
+    <script src="tracker.js"></script>
 </body>
 
 </html>

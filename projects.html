@@ -1,202 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Projects — Muiz Abiola Aminu</title>
+    <title>Projects — Muiz Abiola Aminu</title>
+    <meta name="description"
+        content="The full project archive of Muiz Abiola Aminu — embedded systems, IoT, robotics, health-tech and automation builds.">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232b6cff'/%3E%3Cstop offset='1' stop-color='%230ca6a2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <style>
-        /* Page-Specific Grid for Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .project-card {
-            background: var(--bg-body);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow);
-            border-color: var(--accent);
-        }
-
-        .project-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .project-body {
-            padding: 25px;
-        }
-
-        .project-body h3 {
-            margin-bottom: 10px;
-            font-size: 1.25rem;
-        }
-
-        .project-body p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            background: var(--bg-alt);
-            padding: 4px 12px;
-            border-radius: 20px;
-            color: var(--text-main);
-            font-weight: 500;
-        }
-
-        @media (max-width: 768px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Muiz.</a>
+    <!-- ================= NAV ================= -->
+    <header class="nav scrolled" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="brand">
+                <span class="mark"><i class="fa-solid fa-microchip"></i></span>
+                Muiz<span style="color:var(--accent)">.</span>
+            </a>
 
-            <nav class="nav-links">
-                <a href="index.html#home" class="nav-item">Home</a>
-                <a href="index.html#about" class="nav-item">About</a>
-                <a href="index.html#skills" class="nav-item">Skills</a>
-                <a href="projects.html" class="nav-item active">Work</a>
-                <a href="contact.html" class="nav-item">Contact</a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#experience" class="nav-link">Experience</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="projects.html" class="nav-link active">Work</a>
+                <a href="index.html#publications" class="nav-link">Publications</a>
+                <a href="index.html#credentials" class="nav-link">Credentials</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
             </nav>
 
             <div class="nav-actions">
-                <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
-            </div>
-
-            <div class="menu-icon" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><i
+                        class="fa-solid fa-moon"></i></button>
+                <a href="assets/Muiz_Academic_CV.pdf" target="_blank" rel="noopener"
+                    class="btn btn-ghost btn-sm"><i class="fa-solid fa-file-pdf"></i> CV</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu"><span class="bar"></span><span
+                        class="bar"></span><span class="bar"></span></button>
             </div>
         </div>
     </header>
 
-    <section class="section-padding" style="padding-top: 120px;">
+    <!-- ================= HEADER ================= -->
+    <section class="section" style="padding-top:150px; padding-bottom:20px;">
         <div class="container">
-            <div class="section-header center" data-aos="fade-up">
-                <h2>All Projects</h2>
-                <p>A complete archive of my embedded systems, IoT, and robotics work.</p>
+            <div class="section-head center reveal">
+                <span class="overline">Work archive</span>
+                <h1 style="font-size:clamp(2rem,5vw,3.2rem); margin-bottom:14px;">Projects I've <span
+                        class="accent-text">engineered</span></h1>
+                <p class="lead">Embedded firmware, control systems, IoT and robotics builds. Every card starts with a
+                    short overview — open it for the full case study.</p>
             </div>
 
-            <div class="projects-grid">
+            <div class="filters reveal" data-delay="1" id="filters"></div>
+        </div>
+    </section>
 
-                <article class="project-card" id="plugguard" data-aos="fade-up">
-                    <img src="assets/images/plugguard.jpg" alt="PlugGuard" class="project-img">
-                    <div class="project-body">
-                        <h3>PlugGuard — IoT Safety</h3>
-                        <p>Smart plug with gas/smoke detection and auto-cutoff. Features a Flutter mobile app for
-                            real-time alerts.</p>
-                        <div class="tags">
-                            <span class="tag">ESP32</span><span class="tag">Firebase</span><span
-                                class="tag">Flutter</span>
-                        </div>
-                        <a href="#" class="link-arrow">View Details →</a>
-                    </div>
-                </article>
-
-                <article class="project-card" id="pipeline" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/images/pipeline_robot.jpg" alt="Pipeline Robot" class="project-img">
-                    <div class="project-body">
-                        <h3>Pipeline Monitoring Robot</h3>
-                        <p>Semi-autonomous robot for inspecting industrial pipelines using camera streaming and obstacle
-                            detection.</p>
-                        <div class="tags">
-                            <span class="tag">Robotics</span><span class="tag">C++</span><span
-                                class="tag">Arduino</span>
-                        </div>
-                        <a href="#" class="link-arrow">View Details →</a>
-                    </div>
-                </article>
-
-                <article class="project-card" id="vehicle" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/images/autonomous_vehicle.jpg" alt="Autonomous Vehicle" class="project-img">
-                    <div class="project-body">
-                        <h3>Autonomous Vehicle</h3>
-                        <p>Self-navigating vehicle prototype utilizing sensor fusion and path planning algorithms.</p>
-                        <div class="tags">
-                            <span class="tag">Control Systems</span><span class="tag">Sensors</span>
-                        </div>
-                        <a href="#" class="link-arrow">View Details →</a>
-                    </div>
-                </article>
-
-                <article class="project-card" id="pills" data-aos="fade-up">
-                    <img src="assets/images/pills_dispenser.jpg" alt="Pill Dispenser" class="project-img">
-                    <div class="project-body">
-                        <h3>Smart Pill Dispenser</h3>
-                        <p>IoT-enabled medication dispenser that tracks adherence and alerts patients via mobile
-                            notification.</p>
-                        <div class="tags">
-                            <span class="tag">IoT</span><span class="tag">Servo Motors</span>
-                        </div>
-                        <a href="#" class="link-arrow">View Details →</a>
-                    </div>
-                </article>
-
-                <article class="project-card" id="drier" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/images/food_drier.jpg" alt="Food Drier" class="project-img">
-                    <div class="project-body">
-                        <h3>Automated Food Drier</h3>
-                        <p>PID-controlled temperature and humidity system for efficient food preservation.</p>
-                        <div class="tags">
-                            <span class="tag">PID Control</span><span class="tag">Embedded C</span>
-                        </div>
-                        <a href="#" class="link-arrow">View Details →</a>
-                    </div>
-                </article>
-
-                <article class="project-card" id="antitheft" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/images/anti_theft.jpg" alt="Anti Theft" class="project-img">
-                    <div class="project-body">
-                        <h3>Motorcycle Anti-Theft</h3>
-                        <p>Biometric and GPS-enabled security system to prevent unauthorized access and track location.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">GPS/GSM</span><span class="tag">Biometrics</span>
-                        </div>
-                        <a href="#" class="link-arrow">View Details →</a>
-                    </div>
-                </article>
-
+    <!-- ================= GRID ================= -->
+    <section class="section" style="padding-top:10px;">
+        <div class="container">
+            <div class="proj-grid" id="projectGrid"></div>
+            <div class="reveal" style="text-align:center; margin-top:60px;">
+                <a href="index.html#contact" class="btn btn-ghost"><i class="fa-solid fa-paper-plane"></i> Interested in
+                    one of these systems?</a>
             </div>
         </div>
     </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-top">
+                    <div>
+                        <div class="footer-brand">Muiz Abiola Aminu</div>
+                        <p>Mechatronics Engineer &amp; Researcher · Lagos, Nigeria</p>
+                    </div>
+                    <div class="socials">
+                        <a href="https://github.com/Muheezabiola" target="_blank" rel="noopener" aria-label="GitHub"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com/in/muiz-aminu" target="_blank" rel="noopener"
+                            aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:aminumuiz@gmail.com" aria-label="Email"><i
+                                class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <p style="border-top:1px solid var(--line); padding-top:22px;">© <span id="year"></span> Muiz Abiola
+                    Aminu. Built with plain HTML &amp; CSS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= MODAL ================= -->
+    <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-label="Project case study">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-panel">
+            <button class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-hero" id="modalHero"></div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="data/projects.js"></script>
     <script src="scripts.js"></script>
+    <script src="tracker-config.js"></script>
+    <script src="tracker.js"></script>
 </body>
 
 </html>
