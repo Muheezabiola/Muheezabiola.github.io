@@ -29,8 +29,9 @@
         var btn = $('#themeToggle');
         var stored = null;
         try { stored = localStorage.getItem('theme'); } catch (e) { /* ignore */ }
-        // Light is the default — it reads as a document and suits academic review.
-        applyTheme(stored ? stored === 'dark' : false);
+        var followsDarkSystem = !stored && window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(stored ? stored === 'dark' : followsDarkSystem);
         if (btn) {
             btn.addEventListener('click', function () {
                 var isDark = root.getAttribute('data-theme') === 'dark';

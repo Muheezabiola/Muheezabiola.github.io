@@ -39,8 +39,8 @@ window.PROJECTS = [
             }
         ],
         tech: ["Cyber-Physical Systems", "Gemini AI", "Telemedicine", "LoRa", "ESP32"],
-        image: "assets/images/life-guard1.jpeg",
-        gallery: ["assets/images/lifeguard2.jpeg", "assets/images/lifeguard3.jpeg"],
+        image: "assets/images/life-guard1.webp",
+        gallery: ["assets/images/lifeguard2.webp", "assets/images/lifeguard3.webp"],
         status: "Benchtop proof-of-concept",
         featured: true
     },
@@ -65,8 +65,8 @@ window.PROJECTS = [
             }
         ],
         tech: ["Python", "REST API", "Wireless Comms", "Robotics", "Raspberry Pi", "Ultrasonic"],
-        image: "assets/images/pipeline_robot.png",
-        gallery: ["assets/images/pipeline_robot2.jpg"],
+        image: "assets/images/pipeline_robot.webp",
+        gallery: ["assets/images/pipeline_robot2.webp"],
         status: "Research prototype",
         featured: true
     },
@@ -91,7 +91,7 @@ window.PROJECTS = [
             }
         ],
         tech: ["IoT", "Energy Optimization", "Air Quality", "Safety", "Flutter", "ESP32", "Firebase"],
-        image: "assets/images/plugguard.jpg",
+        image: "assets/images/plugguard.webp",
         gallery: [],
         status: "Working prototype",
         featured: true
@@ -117,7 +117,7 @@ window.PROJECTS = [
             }
         ],
         tech: ["Solar Energy", "Flutter", "Environmental Telemetry", "Automation", "Firebase"],
-        image: "assets/images/food_drier.jpg",
+        image: "assets/images/food_drier.webp",
         gallery: [],
         status: "Working prototype",
         featured: true
@@ -143,7 +143,7 @@ window.PROJECTS = [
             }
         ],
         tech: ["Kinematics", "GPS/GSM", "Flutter", "Asset Security", "Telemetry"],
-        image: "assets/images/anti_theft.jpg",
+        image: "assets/images/anti_theft.webp",
         gallery: [],
         status: "Working prototype",
         featured: true
@@ -169,7 +169,7 @@ window.PROJECTS = [
             }
         ],
         tech: ["Stepper Control", "IoT", "HealthTech", "Mobile Alerting", "Firebase"],
-        image: "assets/images/pills_dispenser.jpg",
+        image: "assets/images/pills_dispenser.webp",
         gallery: [],
         status: "Working prototype",
         featured: true
@@ -195,7 +195,7 @@ window.PROJECTS = [
             }
         ],
         tech: ["Mechatronics", "ESP32-CAM", "Edge Telemetry", "Actuation", "Automation"],
-        image: "assets/images/270-degree-camera.jpg",
+        image: "assets/images/270-degree-camera.webp",
         gallery: [],
         status: "Working prototype",
         featured: false
@@ -221,7 +221,7 @@ window.PROJECTS = [
             }
         ],
         tech: ["TinyML", "Data Acquisition", "True-RMS Metrology", "IoT Telemetry", "Smart Grid"],
-        image: "assets/images/TinyML.jpeg",
+        image: "assets/images/TinyML.webp",
         gallery: [],
         status: "Research prototype",
         featured: false
