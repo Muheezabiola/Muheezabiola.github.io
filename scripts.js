@@ -107,6 +107,15 @@
                 '</div>';
         }
 
+        var clipsHtml = '';
+        if (project.clips && project.clips.length) {
+            clipsHtml = '<div class="modal-clips">' +
+                project.clips.map(function (c) {
+                    return '<img src="' + c + '" alt="' + escapeHtml(project.title) + ' clip" loading="lazy">';
+                }).join('') +
+                '</div>';
+        }
+
         var caseHtml = (project.caseStudy || []).map(function (section) {
             return '<div class="cs-block"><h5>' + escapeHtml(section.heading) + '</h5><p>' + escapeHtml(section.text) + '</p></div>';
         }).join('');
@@ -115,6 +124,7 @@
             '<h4><i class="fa-solid fa-circle-info"></i> Overview</h4>' +
             '<p class="modal-lead">' + escapeHtml(project.summary) + '</p>' +
             galleryHtml +
+            clipsHtml +
             '<h4><i class="fa-solid fa-diagram-project"></i> Expanded case study</h4>' +
             '<div class="cs-list">' + caseHtml + '</div>' +
             '<h4><i class="fa-solid fa-microchip"></i> Tags &amp; technologies</h4>' +

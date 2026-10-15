@@ -11,6 +11,7 @@
      tech       full tag list, rendered as chips
      image      card / hero image
      gallery    extra images shown in the modal
+     clips      optional animated media (webp/gif) shown as vertical tiles in the modal
      status     build maturity label
      featured   true renders the project on the index page
 
@@ -98,6 +99,63 @@ window.PROJECTS = [
     },
 
     {
+        slug: "yolov8-robot",
+        title: "Hierarchical Edge-AI Traffic Sign Recognition",
+        tag: "Robotics",
+        summary: "A semi-autonomous 4WD mechatronic testbed engineered utilizing a Master-Slave control architecture to execute real-time edge intelligence. Benchmarks a YOLOv8n vision engine for traffic sign detection, translating theoretical computer vision into physical chassis actuation.",
+        caseStudy: [
+            {
+                heading: "Real-World Application",
+                text: "Current perception-to-action loops in autonomous vehicles often suffer from non-deterministic latency. This system proves the viability of using lightweight, single-shot detectors (YOLOv8) to provide localized robotic systems with real-time, low-latency collision avoidance and navigational intelligence."
+            },
+            {
+                heading: "Methodology & Architecture",
+                text: "Engineered a decoupled Master-Slave framework. A centralized workstation serves as the high-level perception unit, executing YOLOv8n feature extraction on raw USB camera feeds. An Arduino Nano serves as the low-level slave, receiving interrupt-driven commands to manage deterministic PWM execution for the L298N motor driver."
+            },
+            {
+                heading: "Perception & Actuation Validation",
+                text: "The YOLOv8n model was trained on a custom local dataset, achieving a 98.36% mAP50. The system established a 9600-baud UART serial bridge via Python to execute physical motor control, achieving an end-to-end perception-to-actuation latency of ~133 ms and a 92% physical maneuvering success rate during field trials."
+            }
+        ],
+        tech: ["YOLOv8", "Computer Vision", "Mechatronics", "UART", "Arduino", "Python"],
+        image: "assets/images/yolo_car.webp",
+        gallery: [],
+        status: "Research prototype",
+        featured: true
+    },
+
+    {
+        slug: "autonomous-testbed",
+        title: "Autonomous Navigation Hardware Testbed",
+        tag: "Control Systems",
+        summary: "Commissioned mechatronic fabrication for an academic PhD research project. Handled the low-level hardware integration and control architecture design required to execute complex autonomous hazard avoidance algorithms on a physical chassis.",
+        caseStudy: [
+            {
+                heading: "Real-World Application",
+                text: "Provided a robust physical testbed to validate theoretical MATLAB-based navigation and control algorithms for autonomous vehicles, specifically focusing on complex dynamic environments like speed bump deceleration and pothole avoidance."
+            },
+            {
+                heading: "Methodology & Architecture",
+                text: "Designed and wired the complete mechatronic chassis, ensuring reliable high-current power distribution and signal integrity. Integrated a complex sensor array directly with the microcontroller to provide reliable spatial data for the overarching autonomous algorithms."
+            },
+            {
+                heading: "Control Logic",
+                text: "Implemented specific control algorithms to manage the steering and propulsion modules for autonomous safety interventions. The logic allows the chassis to process external sensor data to execute precise speed bump deceleration profiles and dynamic path adjustments to actively avoid detected potholes."
+            }
+        ],
+        tech: ["Control Systems", "Mechatronics", "Hardware Integration", "MATLAB", "Sensor Telemetry"],
+        image: "assets/images/autonomous_vehicle.webp",
+        gallery: [],
+        clips: [
+            "assets/images/autonomous_vehicle2.webp",
+            "assets/images/autonomous_vehicle3.webp",
+            "assets/images/autonomous_vehicle4.webp"
+        ],
+        status: "Completed hardware",
+        featured: false
+    },
+
+    {
         slug: "drier",
         title: "Automated Food Drier",
         tag: "Automation",
@@ -144,7 +202,7 @@ window.PROJECTS = [
         ],
         tech: ["Kinematics", "GPS/GSM", "Flutter", "Asset Security", "Telemetry"],
         image: "assets/images/anti_theft.webp",
-        gallery: [],
+        gallery: ["assets/images/anti_theft2.webp"],
         status: "Working prototype",
         featured: true
     },

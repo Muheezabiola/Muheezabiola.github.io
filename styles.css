@@ -1540,6 +1540,22 @@ h4 {
     border: 1px solid var(--line);
 }
 
+/* Animated clips keep their vertical framing instead of being cropped. */
+.modal-clips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 16px 0 4px;
+}
+
+.modal-clips img {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+}
+
 .cs-list {
     display: grid;
     gap: 14px;
